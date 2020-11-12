@@ -109,7 +109,7 @@ class ShowUser extends Component {
     const { textarea } = this.state;
     const placeholderText = `Please provide as much detail as possible about the account or behavior you are reporting.`;
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>Report a users portfolio | freeCodeCamp.org</title>
         </Helmet>
@@ -146,7 +146,7 @@ class ShowUser extends Component {
             </form>
           </Col>
         </Row>
-      </Fragment>
+      </>
     );
   }
 }

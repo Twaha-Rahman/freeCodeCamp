@@ -179,7 +179,7 @@ class InternetSettings extends Component {
     } = this.getValidationStateFor(website);
 
     return (
-      <Fragment>
+      <>
         <SectionHeader>Your Internet Presence</SectionHeader>
         <FullWidthRow>
           <form id='internet-presence' onSubmit={this.handleSubmit}>
@@ -244,7 +244,7 @@ class InternetSettings extends Component {
             />
           </form>
         </FullWidthRow>
-      </Fragment>
+      </>
     );
   }
 }

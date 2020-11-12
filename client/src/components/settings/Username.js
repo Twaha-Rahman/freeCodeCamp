@@ -167,7 +167,7 @@ class UsernameSettings extends Component {
     const { isValidUsername, validating } = this.props;
 
     return (
-      <Fragment>
+      <>
         <form id='usernameSettings' onSubmit={this.handleSubmit}>
           <FullWidthRow>
             <FormGroup>
@@ -191,7 +191,7 @@ class UsernameSettings extends Component {
             />
           </FullWidthRow>
         </form>
-      </Fragment>
+      </>
     );
   }
 }

@@ -46,7 +46,7 @@ class DesktopLayout extends Component {
     const challengeFile = this.getChallengeFile();
 
     return (
-      <Fragment>
+      <>
         {showUpcomingChanges && hasEditableBoundries && <ActionRow />}
         <ReflexContainer className='desktop-layout' orientation='vertical'>
           <ReflexElement flex={1} {...resizeProps}>
@@ -58,12 +58,12 @@ class DesktopLayout extends Component {
               <ReflexContainer key={challengeFile.key} orientation='horizontal'>
                 <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
                   {
-                    <Fragment>
+                    <>
                       {showUpcomingChanges && !hasEditableBoundries && (
                         <EditorTabs />
                       )}
                       {editor}
-                    </Fragment>
+                    </>
                   }
                 </ReflexElement>
                 <ReflexSplitter propagate={true} {...resizeProps} />
@@ -80,7 +80,7 @@ class DesktopLayout extends Component {
             </ReflexElement>
           )}
         </ReflexContainer>
-      </Fragment>
+      </>
     );
   }
 }

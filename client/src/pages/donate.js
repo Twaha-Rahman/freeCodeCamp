@@ -76,12 +76,12 @@ export class DonatePage extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Grid className='donate-page-wrapper'>
           <Spacer />
           <Row>
-            <Fragment>
+            <>
               <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
                 <Row className='donate-text'>
                   <Col className={'text-center'} xs={12}>
@@ -117,11 +117,11 @@ export class DonatePage extends Component {
               <Col lg={6}>
                 <CampersImage page='donate' />
               </Col>
-            </Fragment>
+            </>
           </Row>
           <Spacer />
         </Grid>
-      </Fragment>
+      </>
     );
   }
 }

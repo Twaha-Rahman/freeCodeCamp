@@ -290,11 +290,11 @@ class PortfolioSettings extends Component {
             </Button>
           </form>
           {index + 1 !== arr.length && (
-            <Fragment>
+            <>
               <Spacer />
               <hr />
               <Spacer />
-            </Fragment>
+            </>
           )}
         </FullWidthRow>
       </div>

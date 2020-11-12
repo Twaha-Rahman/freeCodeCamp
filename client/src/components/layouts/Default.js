@@ -163,7 +163,7 @@ class DefaultLayout extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <>
         <Helmet
           bodyAttributes={{
             class: useTheme
@@ -235,7 +235,7 @@ class DefaultLayout extends Component {
             {showFooter && <Footer />}
           </div>
         </WithInstantSearch>
-      </Fragment>
+      </>
     );
   }
 }

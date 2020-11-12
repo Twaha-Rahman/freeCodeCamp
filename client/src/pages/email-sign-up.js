@@ -54,7 +54,7 @@ class AcceptPrivacyTerms extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>Email Sign Up | freeCodeCamp.org</title>
         </Helmet>
@@ -104,7 +104,7 @@ class AcceptPrivacyTerms extends Component {
             </Col>
           </Row>
         </Grid>
-      </Fragment>
+      </>
     );
   }
 }

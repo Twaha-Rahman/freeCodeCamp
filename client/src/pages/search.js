@@ -20,7 +20,7 @@ class SearchPage extends Component {
   }
   render() {
     return (
-      <Fragment>
+      <>
         <Helmet title='Search | freeCodeCamp.org' />
         <Index indexName='news' />
         <Grid>
@@ -32,7 +32,7 @@ class SearchPage extends Component {
             </Col>
           </Row>
         </Grid>
-      </Fragment>
+      </>
     );
   }
 }

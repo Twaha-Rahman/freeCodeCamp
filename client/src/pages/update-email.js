@@ -78,7 +78,7 @@ class UpdateEmail extends Component {
   render() {
     const { isNewEmail } = this.props;
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>Update your email address | freeCodeCamp.org</title>
         </Helmet>
@@ -126,7 +126,7 @@ class UpdateEmail extends Component {
             </Col>
           </Row>
         </Grid>
-      </Fragment>
+      </>
     );
   }
 }

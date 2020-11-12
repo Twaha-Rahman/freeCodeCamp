@@ -64,13 +64,13 @@ class LearnLayout extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet>
           <meta content='noindex' name='robots' />
         </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         <DonateModal />
-      </Fragment>
+      </>
     );
   }
 }

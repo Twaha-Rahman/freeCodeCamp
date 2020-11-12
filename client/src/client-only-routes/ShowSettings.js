@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -172,7 +172,7 @@ export function ShowSettings(props) {
   }
 
   return (
-    <Fragment>
+    <>
       <Helmet title='Settings | freeCodeCamp.org' />
       <Grid>
         <main>
@@ -251,7 +251,7 @@ export function ShowSettings(props) {
           <DangerZone />
         </main>
       </Grid>
-    </Fragment>
+    </>
   );
 }
 
