@@ -37,3 +37,26 @@ Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.contains("Get started (it's free)").click({ force: true });
 });
+
+Cypress.Commands.add(
+  'snap',
+  {
+    prevSubject: 'optional'
+  },
+  // eslint-disable-next-line consistent-return
+  (chainedOff, screenshotName) => {
+    cy.wait(1_000);
+
+    if (chainedOff) {
+      cy.wrap(chainedOff).screenshot(`_VD_${screenshotName}`, {
+        capture: 'viewport'
+      });
+
+      return cy.wrap(chainedOff);
+    } else {
+      cy.screenshot(`_VD_${screenshotName}`, {
+        capture: 'viewport'
+      });
+    }
+  }
+);
