@@ -49,7 +49,8 @@ Cypress.Commands.add(
 
     if (chainedOff) {
       cy.wrap(chainedOff).screenshot(`_VD_${screenshotName}`, {
-        capture: 'viewport'
+        capture: 'viewport',
+        disableTimersAndAnimations: false
       });
 
       return cy.wrap(chainedOff);

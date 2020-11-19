@@ -23,7 +23,9 @@ const certifications = [
 describe('Landing page', () => {
   it('Should render', () => {
     cy.visit('/');
-    cy.screenshot();
+
+    cy.snap('Initial view of landing page');
+
     cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
     cy.contains(selectors.callToAction, "Get started (it's free)");
     cy.get(selectors.callToAction).should('have.length', 2);
@@ -57,6 +59,7 @@ describe('Landing page', () => {
   it('Has a visible large image on large viewports', function() {
     cy.viewport(1200, 660)
       .get(selectors.landingPageImage)
+      .snap('Visible large image on landing page on larger viewport')
       .should('be.visible');
 
     cy.viewport(1199, 660)
