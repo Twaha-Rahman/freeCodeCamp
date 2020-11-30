@@ -1,23 +1,23 @@
 const fs = require('fs');
 
-function deleteDir(dir) {
-  let isSuccessfull;
-  try {
-    if (fs.existsSync(dir)) {
-      console.log('Directory for `generatedImageDir` exists.');
-      fs.rmdirSync(dir, { recursive: true });
-      console.log('Directory for `generatedImageDir` is deleted!');
+function removeDir(path) {
+  if (fs.existsSync(path)) {
+    const files = fs.readdirSync(path);
+
+    if (files.length > 0) {
+      files.forEach(function(filename) {
+        if (fs.statSync(path + '/' + filename).isDirectory()) {
+          removeDir(path + '/' + filename);
+        } else {
+          fs.unlinkSync(path + '/' + filename);
+        }
+      });
     } else {
-      console.log('Directory for `generatedImageDir` does not exist.');
+      console.log('No files found in the directory.');
     }
-
-    isSuccessfull = true;
-  } catch (err) {
-    console.error(`Error while deleting ${dir}.`);
-    isSuccessfull = false;
+  } else {
+    console.log('Directory path not found.');
   }
-
-  return isSuccessfull;
 }
 
-module.exports = deleteDir;
+module.exports = removeDir;
