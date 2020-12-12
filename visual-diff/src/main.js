@@ -1,17 +1,34 @@
 const execa = require('execa');
 
 const deleteDir = require('./utils/deleteIfDirExists');
+const watch = require('./utils/watchDir');
 
 const args = require('./utils/collectArgs');
 
 deleteDir(args.generatedImageDir);
 
-execa(
-  args.imageGeneratingCommand.split(' ')[0],
-  args.imageGeneratingCommand.split(' ').slice(1)
-).stdout.pipe(process.stdout);
+watch('cypress/screenshots');
 
-// setTimeout(() => {
-//   cypressWorker.terminate();
-//   console.log('Cypress run timed out!');
-// }, 720_000);
+// const logText = execa(
+//   args.imageGeneratingCommand.split(' ')[0],
+//   args.imageGeneratingCommand.split(' ').slice(1)
+// ).stdout.pipe(process.stdout);
+
+// console.log(logText);
+
+(async () => {
+  // Catching an error
+  try {
+    const data = await execa(
+      args.imageGeneratingCommand.split(' ')[0],
+      args.imageGeneratingCommand.split(' ').slice(1)
+    );
+
+    // console.log(data.stdout);
+
+    process.exit(data.exitCode);
+  } catch (error) {
+    console.log(`Process exited with exit code 1`);
+    process.exit(1);
+  }
+})();
